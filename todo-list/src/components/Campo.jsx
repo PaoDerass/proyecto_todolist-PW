@@ -1,19 +1,28 @@
+import React, { useState } from "react";
 
-const Campo = ({iconName, idCampo, placeholderName, tipoCampo, value, onChange}) => {
-    return (
-      <div className="input-group mb-3">
-        <span className="input-group-text">
-          <i className={iconName} />
-        </span>
-        <input
-          value={value}
-          onChange={onChange}
-          type={tipoCampo}
-          id={idCampo}
-          className="form-control"
-          placeholder={placeholderName}
-        />
-      </div>
-    );
-}
-export default Campo
+const Campo = ({ agregarTarea }) => {
+  const [tituloTarea, setTituloTarea] = useState("");
+
+  const manejarAgregar = () => {
+    if (tituloTarea.trim()) {
+      agregarTarea(tituloTarea);
+      setTituloTarea("");
+    } else {
+      alert("Por favor, escribe una tarea.");
+    }
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Escribe una tarea..."
+        value={tituloTarea}
+        onChange={(e) => setTituloTarea(e.target.value)}
+      />
+      <button onClick={manejarAgregar}>Agregar Tarea</button>
+    </div>
+  );
+};
+
+export default Campo;

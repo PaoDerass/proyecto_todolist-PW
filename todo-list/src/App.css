@@ -36,3 +36,175 @@
     transform: rotate(360deg);
   }
 }
+
+/* App.css */
+.task-list {
+  margin-top: 20px;
+}
+
+.task {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+button {
+  margin-left: 10px;
+}
+
+.todo {
+  background-color: #f9c2c2; /* Rosa */
+}
+
+.in-progress {
+  background-color: #f5a1a1; /* Rojo */
+}
+
+.completed {
+  background-color: #c1e2b3; /* Verde */
+}
+
+/* Base styling for the task list */
+.task-list {
+  padding: 20px;
+}
+
+/* Styling for each task */
+.task {
+  display: flex;
+  justify-content: space-between; /* Ensure buttons are on the right */
+  align-items: center;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  flex-wrap: wrap; /* Allow the content to wrap */
+  transition: background-color 0.3s ease;
+}
+
+.task span {
+  flex-grow: 1; /* Make sure the task title takes up available space */
+  word-wrap: break-word; /* Allow text to wrap if it’s too long */
+}
+
+button {
+  margin-left: 10px;
+  white-space: nowrap; /* Prevent buttons from wrapping */
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+.task .status {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.task {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task.por-hacer {
+  background-color: pink; /* Rosa para "Por Hacer" */
+}
+
+.task.en-progreso {
+  background-color: red; /* Rojo para "En Progreso" */
+}
+
+.task.finalizada {
+  background-color: green; /* Verde para "Finalizada" */
+}
+
+.status {
+  font-weight: bold;
+  font-size: 12px;
+}
+/*body {
+  background-color: #f0f0f0; 
+}*/
+/* 
+body {
+  background-image: url('/imagen/fondo.png');
+  background-size: 100%;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+*/
+body {
+  position: relative;
+  overflow: hidden; 
+  min-height: 100vh; 
+  margin: 0; 
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/imagen/fondo.png');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.2; 
+  z-index: -1; 
+}
+
+input[type="text"] {
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  margin-bottom: 10px;
+}
+/* General button styling */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button on hover */
+button:hover {
+  background-color: #0072ff;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Specific button colors */
+button.delete {
+  background-color: #e74c3c; /* Red */
+}
+
+button.delete:hover {
+  background-color: #c0392b; /* Darker red */
+}
+
+button.update {
+  background-color: #3498db; /* Blue */
+}
+
+button.update:hover {
+  background-color: #2980b9; /* Darker blue */
+}
+
+/* Button for adding tasks */
+button.add {
+  background-color: #2ecc71; /* Green */
+}
+
+button.add:hover {
+  background-color: #27ae60; /* Darker green */
+}
